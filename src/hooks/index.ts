@@ -1,4 +1,5 @@
 export * from './index'
 export * from './useCharactersContext'
 export * from './useGetData'
+export * from './useLike'
 export * from './useOptionFilter'

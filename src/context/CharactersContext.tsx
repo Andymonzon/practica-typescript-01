@@ -1,10 +1,9 @@
-import { createContext, useState } from 'react'
-import { type Personajes } from '../models/characters.models'
+import { createContext } from 'react'
 import { type CharactersContextType } from '../types'
+import { useGetCharacters } from '../hooks'
 
 export const CharactersContext = createContext<CharactersContextType>({
-  characters: [],
-  setCharacters: () => {}
+  characters: []
 })
 
 interface Props {
@@ -12,12 +11,11 @@ interface Props {
 }
 
 export const CharactersContextProvider: React.FC<Props> = ({ children }) => {
-  const [characters, setCharacters] = useState<Personajes[]>([])
+  const { characters } = useGetCharacters()
 
   return (
         <CharactersContext.Provider value={{
-          characters,
-          setCharacters
+          characters
         }}>
             {children}
         </CharactersContext.Provider>
