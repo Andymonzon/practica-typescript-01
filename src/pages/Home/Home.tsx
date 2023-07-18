@@ -7,7 +7,6 @@ export const Home = () => {
   const { filterCharacters } = useFilter()
 
   const filterProducts = filterCharacters(characters)
-
   return (
     <div className="flex">
       <aside className="w-[34%] flex justify-center">

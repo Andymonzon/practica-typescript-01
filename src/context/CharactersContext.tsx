@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react'
 import { type Filters, type CharactersContextType } from '../types.d'
 import { useGetCharacters } from '../hooks'
+import { type Personajes } from '../models'
 
 const initialFilters: Filters = {
   categoryStatus: '',
@@ -13,7 +14,11 @@ export const CharactersContext = createContext<CharactersContextType>({
   characters: [],
   setCharacters: () => {},
   filters: initialFilters,
-  setFilters: () => {}
+  setFilters: () => {},
+  close: true,
+  setClose: () => {},
+  likeCharacter: [],
+  setLikeCharacter: () => {}
 })
 
 interface Props {
@@ -28,6 +33,8 @@ export const CharactersContextProvider: React.FC<Props> = ({ children }) => {
     categorySpecies: 'all',
     search: ''
   })
+  const [close, setClose] = useState(true)
+  const [likeCharacter, setLikeCharacter] = useState<Personajes[]>([])
 
   return (
     <CharactersContext.Provider
@@ -35,7 +42,11 @@ export const CharactersContextProvider: React.FC<Props> = ({ children }) => {
         characters,
         setCharacters,
         filters,
-        setFilters
+        setFilters,
+        setClose,
+        close,
+        setLikeCharacter,
+        likeCharacter
       }}
     >
       {children}

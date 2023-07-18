@@ -1,3 +1,4 @@
+export * from './Modal/Modal'
 export * from './Navbar'
 export * from './SelectForm/OptionsForm'
 export * from './SelectForm'

@@ -12,6 +12,10 @@ export interface CharactersContextType {
   setCharacters: (value: Personajes[]) => void
   filters: Filters
   setFilters: (cb: (value: T) => T) => void
+  close: boolean
+  setClose: (value: boolean) => void
+  likeCharacter: Personajes[]
+  setLikeCharacter: (value: Personajes[]) => void
 }
 
 export enum OptionFilters {

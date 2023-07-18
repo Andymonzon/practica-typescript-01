@@ -1,7 +1,9 @@
 import { useCharacters } from '../../hooks'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 export const Navbar = () => {
-  const { setFilters } = useCharacters()
+  const { setFilters, setClose } = useCharacters()
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = e.target.value
@@ -9,6 +11,10 @@ export const Navbar = () => {
       ...prevState,
       search: value
     }))
+  }
+
+  const openClose = () => {
+    setClose(false)
   }
 
   return (
@@ -20,8 +26,8 @@ export const Navbar = () => {
           className="bg-zinc-300 rounded-md px-2 py-1 outline-none"
           onChange={(e) => { handleSearch(e) }}
         />
-        <button className="rounded-md bg-cyan-500 text-white px-3 py-1">
-          Favs
+        <button className="text-2xl text-red-500" onClick={openClose}>
+          <FontAwesomeIcon icon={faHeart}/>
         </button>
       </nav>
     </header>

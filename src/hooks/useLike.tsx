@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { type Personajes } from './../models'
+import { useCharacters } from '.'
 
 export const useLike = () => {
-  const [likeCharacter, setLikeCharacter] = useState<Personajes[]>([])
+  const { likeCharacter, setLikeCharacter } = useCharacters()
 
   useEffect(() => {
     const storedLike: string | null = localStorage.getItem('like')
