@@ -26,8 +26,8 @@ export const Navbar = () => {
           className="bg-zinc-300 rounded-md px-2 py-1 outline-none"
           onChange={(e) => { handleSearch(e) }}
         />
-        <button className="text-2xl text-red-500" onClick={openClose}>
-          <FontAwesomeIcon icon={faHeart}/>
+        <button className="text-2xl" onClick={openClose}>
+          <FontAwesomeIcon icon={faHeart} color='red'/>
         </button>
       </nav>
     </header>

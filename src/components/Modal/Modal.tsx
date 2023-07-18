@@ -38,12 +38,12 @@ export const Modal = () => {
                       <p>Gender: {like.gender}</p>
                     </div>
                     <button
-                      className="text-2xl text-red-500 p-2"
+                      className="text-2xl p-2"
                       onClick={() => {
                         handleLike(like)
                       }}
                     >
-                      <FontAwesomeIcon icon={faHeart} />
+                      <FontAwesomeIcon icon={faHeart} color='red'/>
                     </button>
                   </div>
                 </div>

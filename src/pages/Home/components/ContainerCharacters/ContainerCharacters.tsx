@@ -1,6 +1,6 @@
 import { type Personajes } from '../../../../models'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsis, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   character: Personajes
@@ -20,16 +20,13 @@ export const ContainerCharacters: React.FC<Props> = ({
         <p className="font-bold">{character.name}</p>
         <p className="text-xs">Status: {character.status}</p>
       </div>
-      <div className="flex justify-between px-4 items-center">
-        <button>
-          <FontAwesomeIcon icon={faEllipsis} />
-        </button>
+      <div className='text-center'>
         <button
           onClick={() => {
             handleLike(character)
           }}
         >
-          <FontAwesomeIcon icon={faHeart} color={color}/>
+          <FontAwesomeIcon icon={faHeart} color={color} />
         </button>
       </div>
     </div>
