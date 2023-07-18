@@ -13,7 +13,9 @@ export const useFilter = () => {
         (filters.categoryGender === 'all' ||
           character.gender === filters.categoryGender) &&
         (filters.categorySpecies === 'all' ||
-          character.species === filters.categorySpecies)
+          character.species === filters.categorySpecies) &&
+        (filters.search === '' ||
+          character.name.toLocaleLowerCase().includes(filters.search))
       )
     })
   }

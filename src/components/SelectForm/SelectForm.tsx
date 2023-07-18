@@ -22,27 +22,44 @@ export const SelectForm = () => {
 
   return (
     <>
-      <select
-        className="px-2 py-1 bg-zinc-300 rounded-md"
-        id={OptionFilters.status}
-        onChange={(e) => {
-          handleChangeFilter(e, OptionFilters.status)
-        }}
-      >
-        <OptionsForm optionFilter={status} />
-      </select>
-      <select className="px-2 py-1 bg-zinc-300 rounded-md"
-      onChange={(e) => {
-        handleChangeFilter(e, OptionFilters.gender)
-      }}>
-        <OptionsForm optionFilter={gender} />
-      </select>
-      <select className="px-2 py-1 bg-zinc-300 rounded-md"
-      onChange={(e) => {
-        handleChangeFilter(e, OptionFilters.species)
-      }}>
-        <OptionsForm optionFilter={specie} />
-      </select>
+      <div className="w-full flex gap-3 items-center">
+        <label htmlFor={OptionFilters.status}>Status:</label>
+        <select
+          className="px-2 py-1 bg-zinc-300 rounded-md w-full"
+          id={OptionFilters.status}
+          onChange={(e) => {
+            handleChangeFilter(e, OptionFilters.status)
+          }}
+        >
+          <OptionsForm optionFilter={status} />
+        </select>
+      </div>
+
+      <div className="w-full flex gap-3 items-center">
+        <label htmlFor={OptionFilters.gender}>Gender:</label>
+        <select
+          className="px-2 py-1 bg-zinc-300 rounded-md w-full"
+          id={OptionFilters.gender}
+          onChange={(e) => {
+            handleChangeFilter(e, OptionFilters.gender)
+          }}
+        >
+          <OptionsForm optionFilter={gender} />
+        </select>
+      </div>
+
+      <div className="w-full flex gap-3 items-center">
+        <label htmlFor={OptionFilters.species}>Specie:</label>
+        <select
+          className="px-2 py-1 bg-zinc-300 rounded-md w-full"
+          id={OptionFilters.species}
+          onChange={(e) => {
+            handleChangeFilter(e, OptionFilters.species)
+          }}
+        >
+          <OptionsForm optionFilter={specie} />
+        </select>
+      </div>
     </>
   )
 }

@@ -7,7 +7,7 @@ export const AsideFilters = () => {
       boxShadow: '0 0 7px #aaa'
     }}>
         <h3 className="text-2xl text-center">Filters</h3>
-        <form className='flex flex-col gap-10'>
+        <form className='flex flex-col gap-10 mt-10'>
             <SelectForm />
         </form>
     </div>

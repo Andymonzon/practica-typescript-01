@@ -4,6 +4,7 @@ interface Filters {
   categoryStatus: string
   categoryGender: string
   categorySpecies: string
+  search: string
 }
 
 export interface CharactersContextType {

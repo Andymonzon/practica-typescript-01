@@ -5,7 +5,8 @@ import { useGetCharacters } from '../hooks'
 const initialFilters: Filters = {
   categoryStatus: '',
   categoryGender: '',
-  categorySpecies: ''
+  categorySpecies: '',
+  search: ''
 }
 
 export const CharactersContext = createContext<CharactersContextType>({
@@ -24,7 +25,8 @@ export const CharactersContextProvider: React.FC<Props> = ({ children }) => {
   const [filters, setFilters] = useState({
     categoryStatus: 'all',
     categoryGender: 'all',
-    categorySpecies: 'all'
+    categorySpecies: 'all',
+    search: ''
   })
 
   return (
