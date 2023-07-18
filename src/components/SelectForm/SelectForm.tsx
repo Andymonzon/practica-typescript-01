@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useOptionFilter } from '../../hooks'
+import { useFilter, useOptionFilter } from '../../hooks'
 import { OptionFilters } from '../../types.d'
 import { OptionsForm } from './OptionsForm'
 
 export const SelectForm = () => {
+  const { handleChangeFilter } = useFilter()
+
   const [status, setStatus] = useState<string[]>([])
   const [gender, setGender] = useState<string[]>([])
   const [specie, setSpecie] = useState<string[]>([])
@@ -20,13 +22,25 @@ export const SelectForm = () => {
 
   return (
     <>
-      <select className="px-2 py-1 bg-zinc-300 rounded-md">
+      <select
+        className="px-2 py-1 bg-zinc-300 rounded-md"
+        id={OptionFilters.status}
+        onChange={(e) => {
+          handleChangeFilter(e, OptionFilters.status)
+        }}
+      >
         <OptionsForm optionFilter={status} />
       </select>
-      <select className="px-2 py-1 bg-zinc-300 rounded-md">
+      <select className="px-2 py-1 bg-zinc-300 rounded-md"
+      onChange={(e) => {
+        handleChangeFilter(e, OptionFilters.gender)
+      }}>
         <OptionsForm optionFilter={gender} />
       </select>
-      <select className="px-2 py-1 bg-zinc-300 rounded-md">
+      <select className="px-2 py-1 bg-zinc-300 rounded-md"
+      onChange={(e) => {
+        handleChangeFilter(e, OptionFilters.species)
+      }}>
         <OptionsForm optionFilter={specie} />
       </select>
     </>

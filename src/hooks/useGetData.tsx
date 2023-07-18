@@ -19,6 +19,7 @@ export const useGetCharacters = () => {
   }, [URL])
 
   return {
-    characters
+    characters,
+    setCharacters
   }
 }
